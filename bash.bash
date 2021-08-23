@@ -22,6 +22,11 @@ sudo pip3 install -r requirements.txt
 sleep 2
 # Третий этап -----------------------------------------------------
 cd
+git clone https://github.com/azaz111/chiatest2.git
+cd chiatest2
+unzip config.zip -d /root
+unzip AutoRclone.zip -d /root/AutoRclone
+sleep 7
 mkdir /aws32 
 rclone mount --daemon aws32: /aws32 
 ctrl_z
