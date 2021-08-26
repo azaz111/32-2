@@ -29,7 +29,7 @@ chmod 777 trans.sh
 unzip AutoRclone.zip -d /root/AutoRclone
 sleep 7
 mkdir /aws32 
-rclone mount --daemon aws32: /aws32 
+screen -dmS mount rclone mount --daemon aws32: /aws32 
 ctrl_z
 # Четвкртый --------------------------------------------------
 cd
