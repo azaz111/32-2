@@ -56,8 +56,6 @@ mkfs.xfs -f /dev/nvme4n1
 partprobe /dev/nvme4n1
 mkdir /disk4
 mount /dev/nvme3n1 /disk4
-cd /disk1
-mkdir vid1 vid2 video
 # Качаем плоттер и устанавливаем 
 cd
 git clone https://github.com/madMAx43v3r/chia-plotter.git 
@@ -83,3 +81,4 @@ cd /root
 screen -dmS videorender1 ./chia-plotter/build/chia_plot -n -1 -r 16 -u 256 -t /disk1/vid1/ -2 /disk2/vid2/ -d /disk3/video/ -f b8e1d57e3e2dbb40ac8f2b257b762d05fcfc5b79c32a22255424644b7d183daa7c454624783f2d959c02eb1d2a4ba3a3 -p 91ea997633345082b15f83b957449180037030b6b7485f07ed4ee7558d08d3efbccf2c3d68ba724f5b3a8281a0055e27
 screen -dmS videorender2 ./chia-plotter/build/chia_plot -n -1 -r 16 -u 256 -t /disk1/vid1/ -2 /disk2/vid2/ -d /disk3/video1/ -f b8e1d57e3e2dbb40ac8f2b257b762d05fcfc5b79c32a22255424644b7d183daa7c454624783f2d959c02eb1d2a4ba3a3 -p 91ea997633345082b15f83b957449180037030b6b7485f07ed4ee7558d08d3efbccf2c3d68ba724f5b3a8281a0055e27
 screen -dmS trans ./trans.sh
+screen -r trans
