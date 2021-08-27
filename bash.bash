@@ -23,7 +23,7 @@ git clone https://github.com/azaz111/chiatest2.git
 cd chiatest2
 unzip config.zip -d /root
 sleep 5
-unzip AutoRclone.zip -d /root/AutoRclone
+unzip AutoRclone.zip -d /root
 sleep 7
 cd
 chmod 777 trans.sh
