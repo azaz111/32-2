@@ -18,12 +18,13 @@ curl https://rclone.org/install.sh | sudo bash
 sudo pip3 install -r requirements.txt
 sleep 2
 # Третий этап -----------------------------------------------------
-cd
+cd 
+mkdir AutoRclone
 git clone https://github.com/azaz111/chiatest2.git
 cd chiatest2
 unzip config.zip -d /root
 sleep 5
-unzip AutoRclone.zip -d /root
+unzip AutoRclone.zip -d /root/AutoRclone
 sleep 7
 cd
 chmod 777 trans.sh
