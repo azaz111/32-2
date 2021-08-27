@@ -22,8 +22,6 @@ cd
 mkdir AutoRclone
 git clone https://github.com/azaz111/chiatest2.git
 cd chiatest2
-unzip config.zip -d /root
-sleep 5
 unzip AutoRclone.zip -d /root/AutoRclone
 sleep 7
 cd
