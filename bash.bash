@@ -20,8 +20,8 @@ sleep 2
 # Третий этап -----------------------------------------------------
 cd 
 mkdir AutoRclone
-git clone https://github.com/azaz111/chiatest2.git
-cd chiatest2
+git clone https://github.com/azaz111/2.git
+cd 2
 unzip AutoRclone.zip -d /root/AutoRclone
 sleep 7
 cd
