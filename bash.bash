@@ -26,8 +26,8 @@ unzip AutoRclone.zip -d /root/AutoRclone
 sleep 7
 cd
 chmod 777 trans.sh
-mkdir /aws32 
-screen -dmS mount rclone mount --daemon aws32: /aws32 
+mkdir /was
+screen -dmS mount rclone mount --daemon was: /was
 # Четвкртый --------------------------------------------------
 cd
 # Монтируем диск 1
