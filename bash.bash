@@ -17,6 +17,9 @@ sudo apt-get install screen git
 curl https://rclone.org/install.sh | sudo bash 
 sudo pip3 install -r requirements.txt
 sleep 2
+curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
 # Третий этап -----------------------------------------------------
 cd 
 mkdir AutoRclone
@@ -27,7 +30,6 @@ sleep 7
 cd
 chmod 777 trans.sh
 mkdir /was
-screen -dmS mount rclone mount --daemon was: /was
 # Четвкртый --------------------------------------------------
 cd
 # Монтируем диск 1
