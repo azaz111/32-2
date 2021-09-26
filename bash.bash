@@ -17,19 +17,15 @@ sudo apt-get install screen git
 curl https://rclone.org/install.sh | sudo bash 
 sudo pip3 install -r requirements.txt
 sleep 2
-curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
 # Третий этап -----------------------------------------------------
-cd 
-mkdir AutoRclone
-git clone https://github.com/azaz111/2.git
-cd 2
-unzip AutoRclone.zip -d /root/AutoRclone
-sleep 7
 cd
 chmod 777 trans.sh
-mkdir /was
+chmod 777 Copi1.sh
+chmod 777 Copi.sh
+mkdir /aws32 
+screen -dmS mount rclone mount --daemon aws32: /aws32 
+mkdir /baws32 
+screen -dmS mount rclone mount --daemon baws32: /baws32 
 # Четвкртый --------------------------------------------------
 cd
 # Монтируем диск 1
@@ -57,6 +53,14 @@ partprobe /dev/nvme4n1
 mkdir /disk4
 mount /dev/nvme3n1 /disk4
 # Создаем дериктории на дисках
+cd /disk4
+mkdir osnova
+cd /disk4
+mkdir osnova1
+cd /disk4 
+mkdir beckup
+cd /disk4 
+mkdir beckup1
 cd /disk1
 mkdir vid1 
 cd /disk2
@@ -79,6 +83,8 @@ sleep 3
 sleep 5
 cd
 # ЗАпуск Плотера ------------------------------
+screen -dmS Copi1 ./Copi1.sh
+screen -dmS Copi ./Copi.sh
 screen -dmS videorender1 ./chia-plotter/build/chia_plot -n -1 -r 16 -u 256 -t /disk1/vid1/ -2 /disk2/vid2/ -d /disk3/video/ -f b8e1d57e3e2dbb40ac8f2b257b762d05fcfc5b79c32a22255424644b7d183daa7c454624783f2d959c02eb1d2a4ba3a3 -p 91ea997633345082b15f83b957449180037030b6b7485f07ed4ee7558d08d3efbccf2c3d68ba724f5b3a8281a0055e27
 screen -dmS videorender2 ./chia-plotter/build/chia_plot -n -1 -r 16 -u 256 -t /disk1/vid1/ -2 /disk2/vid2/ -d /disk3/video1/ -f b8e1d57e3e2dbb40ac8f2b257b762d05fcfc5b79c32a22255424644b7d183daa7c454624783f2d959c02eb1d2a4ba3a3 -p 91ea997633345082b15f83b957449180037030b6b7485f07ed4ee7558d08d3efbccf2c3d68ba724f5b3a8281a0055e27
 screen -dmS otchet python3 awsstat.py
