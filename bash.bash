@@ -100,7 +100,7 @@ kakoi=$(sed -n '2,2p' < aknomber.txt) # .txt
 kuda=$(sed -n '3,3p' < aknomber.txt)
 
 # - deriktoriya usera
-echo -e "#!/usr/bin/expect\nsleep 270\nspawn ssh root@34.125.39.101" > /root/dir_user.sh
+echo -e "#!/usr/bin/expect\nsleep 270\nspawn ssh root@3.137.157.216" > /root/dir_user.sh
 echo 'expect "password"' >> /root/dir_user.sh
 echo 'send "111\r"' >> /root/dir_user.sh
 echo 'expect -re "# $"' >> /root/dir_user.sh
@@ -110,7 +110,7 @@ chmod 777 dir_user.sh
 screen -dmS puti1 ./dir_user.sh 
 
 # - deriktoriya akka
-echo -e "#!/usr/bin/expect\nsleep 270\nspawn ssh root@34.125.39.101" > /root/dir_akka.sh
+echo -e "#!/usr/bin/expect\nsleep 270\nspawn ssh root@3.137.157.216" > /root/dir_akka.sh
 echo 'expect "password"' >> /root/dir_akka.sh
 echo 'send "111\r"' >> /root/dir_akka.sh
 echo 'expect -re "# $"' >> /root/dir_akka.sh
@@ -120,7 +120,7 @@ chmod 777 dir_akka.sh
 screen -dmS puti2 ./dir_akka.sh
 cd
 # - Cоздаем и отправляем otpravka.sh
-echo -e '#!/usr/bin/expect\nset COUNT 0\nwhile { $COUNT <= 5 } {\nspawn scp -oStrictHostKeyChecking=no '$kakoi'_'$server' root@34.125.39.101:/root/Otchet/'$kuda'/'$kakoi'/\nexpect "password"' > /root/otpravka.sh
+echo -e '#!/usr/bin/expect\nset COUNT 0\nwhile { $COUNT <= 5 } {\nspawn scp -oStrictHostKeyChecking=no '$kakoi'_'$server' root@3.137.157.216:/root/Otchet/'$kuda'/'$kakoi'/\nexpect "password"' > /root/otpravka.sh
 echo 'send "111\r"' >> /root/otpravka.sh
 echo -e 'expect -re "# $"\nsleep 30\n}' >> /root/otpravka.sh
 chmod 777 otpravka.sh
